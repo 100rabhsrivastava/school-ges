@@ -565,8 +565,8 @@
                 <ul>
                   <li><a href="index.html">Home</a></li>
                   <li><a href="gallery.html">Gallery</a></li>
-                  <li><a href="acad.html">Academics></li>
                   <li><a href="contact.html">Contact Us</a></li>
+                 
 
                 </ul>
               </div>
@@ -610,6 +610,11 @@
     </div>
     <!-- end footer top -->
     <!-- start footer bottom -->
+    <div class="counts">
+    <div class="counts-text">Website visit count:</div>
+     <!-- <button id="reset">Reset</button>  -->
+  <div class="website-counter"></div>
+</div>
     <div class="mu-footer-bottom">
       <div class="container">
         <div class="mu-footer-bottom-area">
@@ -635,7 +640,26 @@
   <!-- Add fancyBox -->        
   <script type="text/javascript" src="assets/js/jquery.fancybox.pack.js"></script>
   
-  
+  <script> var counterContainer = document.querySelector(".website-counter");
+    var resetButton = document.querySelector("#reset");
+    var visitCount = localStorage.getItem("page_view");
+    
+    // Check if page_view entry is present
+    if (visitCount) {
+      visitCount = Number(visitCount) + 1;
+      localStorage.setItem("page_view", visitCount);
+    } else {
+      visitCount = 1;
+      localStorage.setItem("page_view", 1);
+    }
+    counterContainer.innerHTML = visitCount;
+    
+    // Adding onClick event listener
+    resetButton.addEventListener("click", () => {
+      visitCount = 1;
+      localStorage.setItem("page_view", 1);
+      counterContainer.innerHTML = visitCount;
+    });</script>
   <!-- Custom js -->
   <script src="assets/js/custom.js"></script> 
 
