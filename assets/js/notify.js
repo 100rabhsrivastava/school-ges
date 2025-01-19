@@ -149,7 +149,7 @@ function Noti({ content, status, animation = true, timer = 4000, progress = true
         
             Noti({
                 status: 'success',
-                content:'1) School will start from 1st July 2023',
+                content:'1) School will start from 1st July 2024',
                 timer: 10000,
                 animation: true,
                 progress: true
